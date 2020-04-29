@@ -13,6 +13,7 @@ export class UXWeatherInfoComponent {
     printData:Array<any> = new Array();
 
     ngOnChanges(){
+      this.printData= [];
       if (Array.isArray(this.data)){
         this.printData = this.data;
       }else{

@@ -41,18 +41,23 @@ export class DashboardComponent implements OnInit{
     let secondcall = this.WeatherHistoryRestService.getForcastCityWeather(this.search).pipe(takeUntil(this.unsubscribe$));
 
     forkJoin([firstcall, secondcall]).subscribe(results => {
-      console.log(results);
-      this.errormessage = '';
+      this.resetResults();
       this.weatherCity = results[0];
       this.weatherCityForestcast = results[1];
       this.setLocalStorage();
     }, error => {
-      this.weatherCity = null;
+      this.resetResults();
       this.errormessage = error.error.message;
     });
     
   }
   
+
+  resetResults(){
+    this.errormessage = '';
+    this.weatherCity = null;
+    this.weatherCityForestcast = null;
+  }
   setLocalStorage()  {
      localStorage.setItem('lastSearchedCity',this.search);
   }
