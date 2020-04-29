@@ -3,22 +3,23 @@
     {{label}}
   </div>    
   <ng-container >
-    <div class="ux-weatherInfo__container">
-    <ul>
-        <li *ngFor="let weather of printData">
+    <div class="ux-weatherInfo__results">
+     
+        <div *ngFor="let weather of printData">
           <!--
             in order to leave the component open as much as possible
             it' d be better to do a foreach and read the key value from the input object intead to print statically the values.
             I haven't done it just because i have to deliver within tomorrow moring.
           -->
-          {{ weather.date  | date:'dd-MM-yyyy' }}
-          ---- Min : {{ weather.temp_min }} °C
-          ---- Max : {{ weather.temp_max }} °C
-          ---- Humidity : {{ weather.humidity }} %
-          ---- {{ weather.description }}
-          <img src="http://openweathermap.org/img/w/{{weather.icon}}.png">
-        </li>
-      </ul>
+          <img class="ux-weatherInfo__results--icon" src="http://openweathermap.org/img/w/{{weather.icon}}.png">
+          <span>{{ weather.date  | date:'dd-MM-yyyy' }}</span>
+          <span>---- Min : {{ weather.temp_min }} °C </span>
+          <span>---- Max : {{ weather.temp_max }} °C</span>
+          <span>---- Humidity : {{ weather.humidity }} %</span>
+          <span>---- {{ weather.description }}</span>
+          
+        </div>
+      
     </div>
   </ng-container>
 </div>

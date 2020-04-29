@@ -1,6 +1,7 @@
  
   <div>
       <ux-h1> Dashboard: Weather city</ux-h1>  
+      
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="city">City: </label>
@@ -8,14 +9,18 @@
           <button [disabled]="!search"  type="submit" class="btn btn-success ">Submit</button>
         </div>
       </form>
-
-      <div *ngIf="weatherCity">
+     
+      <!-- RESULTS-->
+      <ng-container *ngIf="weatherCity">
         <ux-weatherInfo label="Today" [data]="weatherCity"></ux-weatherInfo>
-      </div>
-      <div *ngIf="weatherCityForestcast">
+      </ng-container>
+      <ng-container *ngIf="weatherCityForestcast">
         <ux-weatherInfo label="Next coming days" [data]="weatherCityForestcast"></ux-weatherInfo>
-      </div>
+      </ng-container>
+      <!-- RESULTS-->
       
-      <div>{{errormessage}}</div>
+      <div class="error" *ngIf="errormessage">
+        {{errormessage}}
+      </div>
 
-    </div>
+  </div>
