@@ -1,8 +1,7 @@
 <div *ngIf="printData">
-  <div class="ux-weatherInfo__label">
-    {{label}}
-  </div>    
-  <ng-container >
+    <div class="ux-weatherInfo__label">
+      {{label}}
+    </div>    
     <div class="ux-weatherInfo__results">
      
         <div *ngFor="let weather of printData">
@@ -19,9 +18,7 @@
           <span>---- {{ weather.description }}</span>
           
         </div>
-      
     </div>
-  </ng-container>
 </div>
 
 
