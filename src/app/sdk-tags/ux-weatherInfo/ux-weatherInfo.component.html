@@ -1,0 +1,22 @@
+<div *ngIf="printData">
+  <div class="ux-weatherInfo__label">
+    {{label}}
+  </div>    
+  <ng-container >
+    <div class="ux-weatherInfo__container">
+    <ul>
+        <li *ngFor="let weather of printData">
+          {{ weather.date  | date:'dd-MM-yyyy' }}
+          ---- Min : {{ weather.temp_min }} °C
+          ---- Max : {{ weather.temp_max }} °C
+          ---- Humidity : {{ weather.humidity }} %
+          ---- {{ weather.description }}
+          <img src="http://openweathermap.org/img/w/{{weather.icon}}.png">
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</div>
+
+
+

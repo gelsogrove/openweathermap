@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 20px);
+    border:1px solid red;
+  }
+  
+  .content {
+    background: #71FA4C;
+  }
+  
