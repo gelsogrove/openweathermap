@@ -23,7 +23,7 @@ export class WeatherHistoryRestService  {
         )
     }
 
-   convertData(json) : Weather[] {
+   convertData(json): Weather[] {
         return json.list.map(element => {
            
             return new Weather({

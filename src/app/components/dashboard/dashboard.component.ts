@@ -58,6 +58,7 @@ export class DashboardComponent implements OnInit{
     this.weatherCity = null;
     this.weatherCityForestcast = null;
   }
+  
   setLocalStorage()  {
      localStorage.setItem('lastSearchedCity',this.search);
   }

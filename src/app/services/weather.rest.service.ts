@@ -24,13 +24,13 @@ export class WeatherRestService  {
 
 
    convertData(json) : Weather {
-        return  new Weather({
-                    date: Date.now(),
-                    temp_min: Math.round(json.main.temp_min),
-                    temp_max: Math.round(json.main.temp_max) ,
-                    humidity: json.main.humidity,
-                    description : json.weather[0].description,
-                    icon : json.weather[0].icon,
-            });
+    return  new Weather({
+            date: Date.now(),
+            temp_min: Math.round(json.main.temp_min),
+            temp_max: Math.round(json.main.temp_max) ,
+            humidity: json.main.humidity,
+            description : json.weather[0].description,
+            icon : json.weather[0].icon,
+        });
     }
 }
