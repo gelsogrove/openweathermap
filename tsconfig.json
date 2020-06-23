@@ -16,6 +16,14 @@
       "dom"
     ]
   },
+  "paths": {
+    "@environment/*": [
+      "src/environments/*"
+    ],
+    "@main-menu/*": [
+      "src/app/core/layout/main-navigation/main-menu/*"
+    ]
+  },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true

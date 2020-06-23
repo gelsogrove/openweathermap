@@ -1,11 +1,11 @@
 :host {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 20px);
-    border:1px solid red;
+    margin-top:0.5rem;
+    height: calc(100vh - 0.5rem);
+    //border:1px solid red;
   }
-  
+
   .content {
-    background: #71FA4C;
+    background: white;
   }
-  

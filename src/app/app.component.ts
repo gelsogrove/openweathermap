@@ -1,27 +1,22 @@
 import {Component, OnInit} from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import {AppSettings} from '../app/configs/app-settings.config';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  template: `    
-  <app-header *ngIf="showHeader" fxLayout="column"></app-header>
-  <div fxLayout="row" fxFlex="100">
-    <app-sidebar *ngIf="showSidebar" fxLayout="column" fxFlex="220px"></app-sidebar>
-    <div class="content" fxLayout="column" fxFlex>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-  
-  <app-footer *ngIf="showFooter" fxLayout="column"></app-footer>  
-    `,
-    styleUrls: ['./app.component.scss']
+  templateUrl: `./app.component.html`,
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  showHeader = false;
-  showSidebar = false;
-  showFooter = false;
+export class AppComponent implements OnInit {
+  public showHeader;
+  public showSidebar;
+  public showFooter;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.showHeader = AppSettings.showHeader;
+    this.showSidebar = AppSettings.showSidebar;
+    this.showFooter  = AppSettings.showFooter;
+  }
 
   ngOnInit() {
     this.router.events.subscribe(event => {
@@ -32,11 +27,5 @@ export class AppComponent {
       }
     });
   }
-
-
-  ngOnDestroy() {
-  
-  }
-
 }
 
